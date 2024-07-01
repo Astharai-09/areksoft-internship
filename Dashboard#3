@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard #3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100%;
+            overflow-y: auto;
+            position: fixed;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3367d6;
+            margin-bottom: 30px;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: #5f6368;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+        .menu-item.active {
+            background-color: #e8f0fe;
+            color: #3367d6;
+            border-radius: 0 25px 25px 0;
+        }
+        .menu-item i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #dadce0;
+            margin: 15px 0;
+        }
+        .section-title {
+            font-size: 12px;
+            color: #5f6368;
+            margin: 15px 0 10px 10px;
+            text-transform: uppercase;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .slider {
+            position: relative;
+            background-color: #4a90e2;
+            border-radius: 10px;
+            padding: 30px;
+            color: white;
+        }
+        .slide-content {
+            text-align: left;
+        }
+        .date {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #4a90e2;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .left-arrow {
+            left: -15px;
+        }
+        .right-arrow {
+            right: -15px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">DashStack</div>
+        <a href="#" class="menu-item"><i class="material-icons">dashboard</i>Dashboard</a>
+        <a href="#" class="menu-item active"><i class="material-icons">inventory_2</i>Products</a>
+        <a href="#" class="menu-item"><i class="material-icons">favorite</i>Favorites</a>
+        <a href="#" class="menu-item"><i class="material-icons">inbox</i>Inbox</a>
+        <a href="#" class="menu-item"><i class="material-icons">list_alt</i>Order Lists</a>
+        <a href="#" class="menu-item"><i class="material-icons">inventory</i>Product Stock</a>
+        <div class="divider"></div>
+        <div class="section-title">Pages</div>
+        <a href="#" class="menu-item"><i class="material-icons">attach_money</i>Pricing</a>
+        <a href="#" class="menu-item"><i class="material-icons">calendar_today</i>Calendar</a>
+        <a href="#" class="menu-item"><i class="material-icons">check_box</i>To-Do</a>
+        <a href="#" class="menu-item"><i class="material-icons">contacts</i>Contact</a>
+        <a href="#" class="menu-item"><i class="material-icons">receipt</i>Invoice</a>
+        <a href="#" class="menu-item"><i class="material-icons">dashboard_customize</i>UI Elements</a>
+        <a href="#" class="menu-item"><i class="material-icons">group</i>Team</a>
+        <a href="#" class="menu-item"><i class="material-icons">table_chart</i>Table</a>
+        <div class="divider"></div>
+        <a href="#" class="menu-item"><i class="material-icons">settings</i>Settings</a>
+        <a href="#" class="menu-item"><i class="material-icons">logout</i>Logout</a>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <i class="material-icons">menu</i>
+            <input type="text" class="search-bar" placeholder="Search">
+        </div>
+        <h1>Products</h1>
+        <div class="slider">
+            <button class="arrow left-arrow">&lt;</button>
+            <div class="slide">
+                <div class="slide-content">
+                    <span class="date">September 12, 22</span>
+                    <h2>Enjoy free home delivery in this summer</h2>
+                    <p>Designer Dresses - Pick from trendy Designer Dress</p>
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </div>
+            <button class="arrow right-arrow">&gt;</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+
+            leftArrow.addEventListener('click', () => {
+                console.log('Previous slide');
+                // Implement previous slide functionality here
+            });
+
+            rightArrow.addEventListener('click', () => {
+                console.log('Next slide');
+                // Implement next slide functionality here
+            });
+        });
+    </script>
+</body>
+</html>
